@@ -92,7 +92,7 @@ namespace NinjaGame
             var sin = Mathf.Sin(_dragingVertexIndex * radianGap);
             var x = cos * radius * value;
             var y = sin * radius * value;
-            var distanceToCenter = Mathf.Clamp(Vector2.Dot(mouseLocalPoint, new Vector2(cos, sin)), 0, radius) / radius;
+            var distanceToCenter = Mathf.Clamp(Vector2.Dot(mouseLocalPoint, new Vector2(cos, sin)), 0, radius);
             
 
             Values[_dragingVertexIndex] = Mathf.Clamp01(distanceToCenter / radius);
