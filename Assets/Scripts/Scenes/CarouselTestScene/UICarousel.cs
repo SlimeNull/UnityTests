@@ -189,7 +189,11 @@ namespace NinjaGame
 
         public void OnDrag(PointerEventData eventData)
         {
-            _radianOffset += eventData.delta.x / 180;
+            var selfSizeDelta = _rectTransform.sizeDelta;
+            float normalizedOffset = eventData.delta.x / (selfSizeDelta.x / 2);
+            float angleOffset = Mathf.Asin(normalizedOffset % 1);
+
+            _radianOffset += angleOffset;
             UpdateImagesStatus();
         }
 

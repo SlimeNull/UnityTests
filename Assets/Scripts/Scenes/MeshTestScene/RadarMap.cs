@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 namespace NinjaGame
 {
+    /// <summary>
+    /// 雷达图
+    /// </summary>
     [RequireComponent(typeof(RectTransform))]
     [RequireComponent(typeof(CanvasRenderer))]
     public class RadarMap : MaskableGraphic, IDragHandler, IBeginDragHandler, IEndDragHandler
@@ -18,6 +21,9 @@ namespace NinjaGame
         [SerializeField]
         float[] _values = new float[]{ 1, 1, 1, 1, 1, 1 };
 
+        /// <summary>
+        /// 雷达图大小
+        /// </summary>
         public float Size
         {
             get => _size;
@@ -28,6 +34,9 @@ namespace NinjaGame
             }
         }
 
+        /// <summary>
+        /// 雷达图值
+        /// </summary>
         public float[] Values
         {
             get => _values;
@@ -38,9 +47,15 @@ namespace NinjaGame
             }
         }
 
+        /// <summary>
+        /// 允许用户拖拽变更值
+        /// </summary>
         [field: SerializeField]
         public bool AllowChange { get; set; } = false;
 
+        /// <summary>
+        /// 拖拽手柄大小
+        /// </summary>
         [field: SerializeField]
         public float HandleSize { get; set; } = 15;
 
@@ -75,6 +90,7 @@ namespace NinjaGame
 
         void IDragHandler.OnDrag(PointerEventData eventData)
         {
+            // 仅在有索引的时候进行拖拽
             if (_dragingVertexIndex == -1)
                 return;
 
@@ -85,6 +101,7 @@ namespace NinjaGame
 
             var radianGap = Mathf.PI * 2 / vertexCount;
 
+            // 使用内置的工具类方法将鼠标坐标从屏幕坐标转到 RectTransform 的局部坐标
             RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, Input.mousePosition, GetComponentInParent<Canvas>().worldCamera, out var mouseLocalPoint);
 
             var value = Mathf.Clamp01(Values[_dragingVertexIndex]);
@@ -92,9 +109,11 @@ namespace NinjaGame
             var sin = Mathf.Sin(_dragingVertexIndex * radianGap);
             var x = cos * radius * value;
             var y = sin * radius * value;
+
+            // 点积取鼠标向量在当前方向上的投影, 并使用 Clamp 限制取值
             var distanceToCenter = Mathf.Clamp(Vector2.Dot(mouseLocalPoint, new Vector2(cos, sin)), 0, radius);
             
-
+            // 最终取值也限制下, 因为只能是 0~1
             Values[_dragingVertexIndex] = Mathf.Clamp01(distanceToCenter / radius);
             SetAllDirty();
         }
@@ -124,8 +143,10 @@ namespace NinjaGame
                 var x = cos * radius * value;
                 var y = sin * radius * value;
 
+                // 如果鼠标位置与雷达图一角端点的距离小于手柄大小
                 if (Vector2.Distance(mouseLocalPoint, new Vector2(x, y)) < HandleSize)
                 {
+                    // 记录当前顶点索引
                     _dragingVertexIndex = i;
                     return;
                 }
@@ -134,6 +155,7 @@ namespace NinjaGame
 
         void IEndDragHandler.OnEndDrag(PointerEventData eventData)
         {
+            // 停止拖拽, 重置拖拽顶点索引
             _dragingVertexIndex = -1;
         }
     }
