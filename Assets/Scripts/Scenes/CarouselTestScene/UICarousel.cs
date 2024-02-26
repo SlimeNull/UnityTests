@@ -5,39 +5,75 @@ using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 namespace NinjaGame
 {
     [RequireComponent(typeof(RectTransform))]
-    public class UICarousel : UIBehaviour, IDragHandler, IEndDragHandler, IPointerClickHandler
+    public class UICarousel : UIBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
     {
         RectTransform _rectTransform;
 
+        // 旋转偏移量 (弧度制)
         float _radianOffset;
+        float _radianVelocity;
+        float _radianVelocityDrag = 10;
+
+        bool _dragging;
+
 
         [SerializeField]
         Sprite[] _images;
-        List<UnityEngine.UI.Image> _imageComponents;
 
+        [SerializeField]
+        private bool _scaleImages = true;
+
+        List<UnityEngine.UI.Image> _imageComponents = new();
+
+        protected RectTransform rectTransform => _rectTransform ??= GetComponent<RectTransform>();
+
+        // 图片集合
         public Sprite[] Images { get => _images; set => SetImages(value); }
 
+        // 图片尺寸 (用于生成 Image 物体设置大小)
         [field: SerializeField]
         public Vector3 ImageSize { get; set; } = new Vector3(100, 100);
 
+        /// <summary>
+        ///是否根据图像的前后关系调整图像大小  <br/>
+        /// 如果是 Overlap, 不存在近大远小, 则需要开启这个, 但是如果是 WorldSpace 的 Canvas 并且设置了缩放使其在场景内, 则不需要启用这个
+        /// </summary>
+        public bool ScaleImages
+        {
+            get => _scaleImages; 
+            set
+            {
+                _scaleImages = value;
+                UpdateImagesStatus();
+            }
+        }
         [field: SerializeField]
-        public bool ScaleImages { get; set; } = true;
+        public bool AllowClickSelection { get; set; } = false;
 
+        /// <summary>
+        /// 最小缩放比例 (最后方的图像的缩放系数会是这个值)
+        /// </summary>
         [field: SerializeField]
         public float MinScale { get; set; } = 0.3f;
 
+        /// <summary>
+        /// 已选择的索引
+        /// </summary>
         public int SelectedIndex { get; private set; }
+
+        /// <summary>
+        /// 已选择的图像
+        /// </summary>
         public Sprite SelectedImage { get; private set; }
 
 
         protected override void Awake()
         {
-            _rectTransform = GetComponent<RectTransform>();
-
             Initialize();
         }
 
@@ -46,6 +82,33 @@ namespace NinjaGame
             UpdateImagesStatus();
         }
 
+        protected virtual void Update()
+        {
+            // 拖拽惯性
+            if (!_dragging && _radianVelocity != 0)
+            {
+                _radianOffset += _radianVelocity * Time.deltaTime;
+                UpdateImagesStatus();
+
+                var radianVelocitySign = Mathf.Sign(_radianVelocity);
+                var radianVelocitySize = Mathf.Abs(_radianVelocity);
+
+                radianVelocitySize -= _radianVelocityDrag * Time.deltaTime;
+                if (radianVelocitySize < 0)
+                    radianVelocitySize = 0;
+
+                _radianVelocity = radianVelocitySign * radianVelocitySize;
+
+                if (_radianVelocity == 0)
+                {
+                    Select(SelectedIndex);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
         private void Initialize()
         {
             if (_images is null)
@@ -54,11 +117,20 @@ namespace NinjaGame
             UpdateRenderers();
         }
 
+        /// <summary>
+        /// 在设置图像时, 同时更新渲染器 (创建或删除 Image 对象)
+        /// </summary>
+        /// <param name="images"></param>
         private void SetImages(Sprite[] images)
         {
             UpdateRenderers();
         }
 
+        /// <summary>
+        /// 根据图像创建 Image 对象, 并自动设置属性
+        /// </summary>
+        /// <param name="image"></param>
+        /// <returns></returns>
         private UnityEngine.UI.Image CreateRendererFor(Sprite image)
         {
             GameObject gameObject = new("Image");
@@ -74,6 +146,9 @@ namespace NinjaGame
             return renderer;
         }
 
+        /// <summary>
+        /// 更新 Sprite 的渲染器
+        /// </summary>
         private void UpdateRenderers()
         {
             if (_imageComponents is null)
@@ -109,16 +184,23 @@ namespace NinjaGame
             }
         }
 
+        /// <summary>
+        /// 旋转主逻辑
+        /// 根据 "旋转偏移量" 设置所有图像的位置, 大小, 以及前后关系
+        /// </summary>
         private void UpdateImagesStatus()
         {
+            UpdateRenderers();
+
             var scaleGap = 1 - MinScale;
             var radianGap = Mathf.PI * 2 / _images.Length;
-            var selfSizeDelta = _rectTransform.sizeDelta;
+            var selfSizeDelta = rectTransform.sizeDelta;
+            var radius = selfSizeDelta.x / 2;
             var imageCount = _images.Length;
             var halfPi = Mathf.PI / 2;
 
+            var minSin = 1f;
             var selectedImageIndex = -1;
-            var selectedImageScale = 0.0f;
 
             _radianOffset %= (Mathf.PI * 2);
             for (int i = 0; i < imageCount; i++)
@@ -128,27 +210,44 @@ namespace NinjaGame
 
                 float cos = Mathf.Cos(radianGap * i + _radianOffset - halfPi);
                 float sin = Mathf.Sin(radianGap * i + _radianOffset - halfPi);
-                var x = cos * selfSizeDelta.x;
-                var z = sin * selfSizeDelta.x;
-                var scale = Mathf.Lerp(MinScale, 1, ((-sin) + 1) / 2);
+                var x = cos * radius;
+                var z = sin * radius;
 
-                if (scale > selectedImageScale)
+                if (sin <= minSin)
                 {
                     selectedImageIndex = i;
-                    selectedImageScale = scale;
+                    minSin = sin;
                 }
 
                 renderer.transform.localPosition = new Vector3(x, 0, z);
-                renderer.transform.localScale = new Vector3(scale, scale, scale);
+
+                if (ScaleImages)
+                {
+                    var scale = Mathf.Lerp(MinScale, 1, ((-sin) + 1) / 2);
+                    renderer.transform.localScale = new Vector3(scale, scale, scale);
+                }
+                else
+                {
+                    renderer.transform.localScale = new Vector3(1, 1, 1);
+                }
             }
 
+            // 根据大小, 调整顺序, 因为小的在后面, 所以直接根据大小, 调用调整顺序方法
             foreach (var com in _imageComponents.OrderBy(com => com.rectTransform.localScale.x))
                 com.transform.SetAsLastSibling();
 
+            // 记录当前选择索引以及图像
             SelectedIndex = selectedImageIndex;
             SelectedImage = _images[selectedImageIndex];
         }
 
+        /// <summary>
+        /// 矫正目标的旋转量
+        /// 用于圆形旋转时, 当需要从 350 旋转到 -10 时, 不让它从 350 过渡到 -10, 而是从 350 过渡到 370
+        /// </summary>
+        /// <param name="current"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
         private float CorrectRadianTarget(float current, float target)
         {
             if (target > current)
@@ -165,6 +264,11 @@ namespace NinjaGame
             return target;
         }
 
+        /// <summary>
+        /// 根据对象索引, 获取对应旋转偏移量
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         private float GetRadianOffsetFromIndex(int index)
         {
             var radianGap = Mathf.PI * 2 / _images.Length;
@@ -172,6 +276,17 @@ namespace NinjaGame
             return radianGap * -index;
         }
 
+        protected override void OnRectTransformDimensionsChange()
+        {
+            base.OnRectTransformDimensionsChange();
+
+            UpdateImagesStatus();
+        }
+
+        /// <summary>
+        /// 旋转目标索引的对象
+        /// </summary>
+        /// <param name="index"></param>
         public void Select(int index)
         {
             var startValue = _radianOffset;
@@ -187,18 +302,46 @@ namespace NinjaGame
                 .SetEase(Ease.OutCirc);
         }
 
-        public void OnDrag(PointerEventData eventData)
+        /// <summary>
+        /// 拖拽时, 计算实际角度偏移量, 并更新图像状态
+        /// </summary>
+        /// <param name="eventData"></param>
+        void IDragHandler.OnDrag(PointerEventData eventData)
         {
             var selfSizeDelta = _rectTransform.sizeDelta;
             float normalizedOffset = eventData.delta.x / (selfSizeDelta.x / 2);
-            float angleOffset = Mathf.Asin(normalizedOffset % 1);
+            float radianChange = Mathf.Asin(normalizedOffset % 1);
 
-            _radianOffset += angleOffset;
+            _radianOffset += radianChange;
+            _radianVelocity = radianChange / Time.deltaTime;
             UpdateImagesStatus();
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+        void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
         {
+            _dragging = true;
+        }
+
+        /// <summary>
+        /// 旋转结束时, 也选择最前方的对象
+        /// </summary>
+        /// <param name="eventData"></param>
+        void IEndDragHandler.OnEndDrag(PointerEventData eventData)
+        {
+            //Select(SelectedIndex);
+
+            _dragging = false;
+        }
+
+        /// <summary>
+        /// 当点击时, 如果点击了某个图像, 则将它旋转到最前方
+        /// </summary>
+        /// <param name="eventData"></param>
+        void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+        {
+            if (!AllowClickSelection)
+                return;
+
             var imageCount = _images.Length;
 
             for (int i = 0; i < imageCount; i++)
@@ -211,11 +354,6 @@ namespace NinjaGame
                     break;
                 }
             }
-        }
-
-        public void OnEndDrag(PointerEventData eventData)
-        {
-            Select(SelectedIndex);
         }
     }
 }
