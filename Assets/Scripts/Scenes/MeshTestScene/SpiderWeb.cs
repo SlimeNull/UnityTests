@@ -22,41 +22,45 @@ namespace NinjaGame
 
         protected override void OnPopulateMesh(VertexHelper vh)
         {
-            var radius = Size / 2;
-            var vertexCount = VertexCount;
-            var lineCount = LineCount;
-            var lineThickness = LineThickness;
-            var halfLineThickness = lineThickness / 2;
-            var radianGap = Mathf.PI * 2 / vertexCount;
+            var radius = Size / 2;                            // 半径
+            var vertexCount = VertexCount;                    // 顶点数量
+            var lineCount = LineCount;                        // 线条数量
+            var lineThickness = LineThickness;                // 线条厚度
+            var halfLineThickness = lineThickness / 2;        // 线条厚度的一半
+            var radianGap = Mathf.PI * 2 / vertexCount;       // 弧度间隔
 
             vh.Clear();
 
+            // 循环每一条线
             for (int i = 0; i < lineCount; i++)
             {
-                var outerRadius = radius - (radius * i / lineCount);
-                var innerRadius = radius - (radius * i / lineCount) - lineThickness;
-                var lineVertexIndexOffset = vh.currentVertCount;
+                var outerRadius = radius - (radius * i / lineCount);                     // 这条线外部半径
+                var innerRadius = radius - (radius * i / lineCount) - lineThickness;     // 这条线内部半径
+                var lineVertexIndexOffset = vh.currentVertCount;                         // 当前边顶点索引偏移量
 
+                // 循环每一个顶点
                 for (int j = 0; j < vertexCount; j++)
                 {
-                    var radian = radianGap * j;
-                    var cos = Mathf.Cos(radian);
-                    var sin = Mathf.Sin(radian);
+                    var radian = radianGap * j;            // 当前顶点角度
+                    var cos = Mathf.Cos(radian);           // COS 值
+                    var sin = Mathf.Sin(radian);           // SIN 值
 
-                    var outerX = cos * outerRadius;
-                    var outerY = sin * outerRadius;
+                    var outerX = cos * outerRadius;        // 外部顶点的 X 坐标
+                    var outerY = sin * outerRadius;        // 外部顶点的 Y 坐标
 
-                    var innerX = cos * innerRadius;
-                    var innerY = sin * innerRadius;
+                    var innerX = cos * innerRadius;        // 内部顶点的 X 坐标
+                    var innerY = sin * innerRadius;        // 内部顶点的 Y 坐标
 
-                    var currentOuterVertexIndex = lineVertexIndexOffset + j * 2;
-                    var currentInnerVertexIndex = lineVertexIndexOffset + j * 2 + 1;
-                    var nextOuterVertexIndex = lineVertexIndexOffset + (j + 1) % vertexCount * 2;
-                    var nextInnerVertexIndex = lineVertexIndexOffset + (j + 1) % vertexCount * 2 + 1;
+                    var currentOuterVertexIndex = lineVertexIndexOffset + j * 2;                          // 当前角外部顶点的索引
+                    var currentInnerVertexIndex = lineVertexIndexOffset + j * 2 + 1;                      // 当前角内部顶点的索引
+                    var nextOuterVertexIndex = lineVertexIndexOffset + (j + 1) % vertexCount * 2;         // 下一个角外部顶点的索引
+                    var nextInnerVertexIndex = lineVertexIndexOffset + (j + 1) % vertexCount * 2 + 1;     // 下一个角内部顶点的索引
 
+                    // 添加两个顶点
                     vh.AddVert(new Vector3(outerX, outerY), color, new Vector4());
                     vh.AddVert(new Vector3(innerX, innerY), color, new Vector4());
 
+                    // 添加两个三角形
                     vh.AddTriangle(currentInnerVertexIndex, nextInnerVertexIndex, nextOuterVertexIndex);
                     vh.AddTriangle(currentInnerVertexIndex, nextOuterVertexIndex, currentOuterVertexIndex);
                 }
@@ -65,14 +69,14 @@ namespace NinjaGame
 
             for (int i = 0; i < vertexCount; i++)
             {
-                var outerRadius = radius - lineThickness / 2;
+                var outerRadius = radius - lineThickness / 2;           // 外部半径
                 var vertexIndexOffset = vh.currentVertCount;
 
-                var radian = radianGap * i;
-                var cos = Mathf.Cos(radian);
-                var sin = Mathf.Sin(radian);
-                var tanCos = Mathf.Cos(radian - Mathf.PI / 2);
-                var tanSin = Mathf.Sin(radian - Mathf.PI / 2);
+                var radian = radianGap * i;                             // 当前方向角度
+                var cos = Mathf.Cos(radian);                            // 当前角度 COS 值
+                var sin = Mathf.Sin(radian);                            // 当前角度 SIN 值
+                var tanCos = Mathf.Cos(radian - Mathf.PI / 2);          // 当前方向切线的 COS 值
+                var tanSin = Mathf.Sin(radian - Mathf.PI / 2);          // 当前方向切线的 SIN 值
                 var sideX = cos * outerRadius;
                 var sideY = sin * outerRadius;
 
