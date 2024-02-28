@@ -645,7 +645,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -205}
-  m_SizeDelta: {x: 1253.707, y: 285.49792}
+  m_SizeDelta: {x: 657.2632, y: 252.7345}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &858069485
 MonoBehaviour:
@@ -667,8 +667,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4972ad11b92a0f24ca4743a958698f0a, type: 3}
   - {fileID: 21300000, guid: 0b9c42490ba43dd4cb28e009560c1d94, type: 3}
   - {fileID: 21300000, guid: d5e593d3695a7344b90655a7da0bbbd8, type: 3}
+  _scaleImages: 1
   <ImageSize>k__BackingField: {x: 100, y: 100, z: 0}
-  <ScaleImages>k__BackingField: 1
+  <AllowClickSelection>k__BackingField: 0
   <MinScale>k__BackingField: 0.3
 --- !u!1 &1261227882
 GameObject:

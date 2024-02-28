@@ -3,10 +3,8 @@
 namespace NinjaGame
 {
     [RequireComponent(typeof(MeshFilter))]
-    public class MakePipeMesh : MonoBehaviour
+    public class MakePipeMesh : MeshBuilder
     {
-        MeshFilter _meshFilter;
-
         /// <summary>
         /// 管道半径
         /// </summary>
@@ -31,12 +29,7 @@ namespace NinjaGame
         [field: SerializeField]
         public int VertexCountInCircle { get; set; } = 10;
 
-        private void Awake()
-        {
-            _meshFilter = GetComponent<MeshFilter>();
-        }
-
-        private void Start()
+        protected override Mesh CreateMesh()
         {
             //var halfPi = Mathf.PI / 2;
             var radius = Radius;                                              // 半径
@@ -76,7 +69,7 @@ namespace NinjaGame
                 // 内侧顶点坐标值
                 var innerX = cos * innerRadius;
                 var innerZ = sin * innerRadius;
-                 
+
                 // 当前角度, 顶部顶点, 底部顶点, 内圆顶部顶点, 内圆下部顶点, 在顶点数组中的索引
                 var currentTopVertexIndex = i;
                 var currentBottomVertexIndex = i + vertexCountInCircle;
@@ -144,8 +137,7 @@ namespace NinjaGame
             // 重新计算发现 (但对于当前的顶点, 这方法并没什么好的作用)
             newMesh.RecalculateNormals();
 
-            // 赋值 Mesh
-            _meshFilter.mesh = newMesh;
+            return newMesh;
         }
     }
 }

@@ -1,29 +1,22 @@
 using System.Collections;
-using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace NinjaGame
 {
+
     [RequireComponent(typeof(MeshFilter))]
-    public class MakeCubeMesh : MonoBehaviour
+    public class MakeCubeMesh : MeshBuilder
     {
         [field: SerializeField]
         public float Radius { get; set; } = 0.5f;
 
-        MeshFilter _meshFilter;
-
-        private void Awake()
-        {
-            _meshFilter = GetComponent<MeshFilter>();
-        }
-
-        // Start is called before the first frame update
-        void Start()
+        protected override Mesh CreateMesh()
         {
             float radius = Radius;
 
-            _meshFilter.mesh = new Mesh()
+            return new Mesh()
             {
                 vertices = new Vector3[]
                 {
@@ -53,12 +46,6 @@ namespace NinjaGame
                     4, 0, 1
                 }
             };
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

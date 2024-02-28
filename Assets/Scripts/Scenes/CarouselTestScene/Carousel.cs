@@ -109,16 +109,13 @@ namespace NinjaGame
         {
             const float doublePi = Mathf.PI * 2;
 
-            if (target > origin)
-            {
-                if (origin - (target - doublePi) < target - origin)
-                    target -= doublePi;
-            }
-            else
-            {
-                if ((target + doublePi) - origin < origin - target)
-                    target += doublePi;
-            }
+            float diff = (target - origin) % doublePi;
+            if (diff > Mathf.PI)
+                diff -= doublePi;
+            else if (diff < -Mathf.PI)
+                diff += doublePi;
+
+            target = origin + diff;
         }
 
         /// <summary>

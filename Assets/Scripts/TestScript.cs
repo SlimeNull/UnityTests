@@ -7,7 +7,7 @@ namespace NinjaGame.Assets.Scripts
     {
         void TestMethod()
         {
-            
+
         }
     }
 }

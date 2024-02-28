@@ -3,10 +3,8 @@
 namespace NinjaGame
 {
     [RequireComponent(typeof(MeshFilter))]
-    public class MakeCylinderMesh : MonoBehaviour
+    public class MakeCylinderMesh : MeshBuilder
     {
-        MeshFilter _meshFilter;
-
         [field: SerializeField]
         public float Radius { get; set; } = 0.5f;
 
@@ -16,12 +14,7 @@ namespace NinjaGame
         [field: SerializeField]
         public int VertexCountInCircle { get; set; } = 10;
 
-        private void Awake()
-        {
-            _meshFilter = GetComponent<MeshFilter>();
-        }
-
-        private void Start()
+        protected override Mesh CreateMesh()
         {
             //var halfPi = Mathf.PI / 2;
             var radius = Radius;
@@ -112,7 +105,7 @@ namespace NinjaGame
 
             newMesh.RecalculateNormals();
 
-            _meshFilter.mesh = newMesh;
+            return newMesh;
         }
     }
 }

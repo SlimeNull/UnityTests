@@ -10,7 +10,7 @@ namespace NinjaGame
     /// </summary>
     [RequireComponent(typeof(RectTransform))]
     [RequireComponent(typeof(CanvasRenderer))]
-    public class RadarMap : MaskableGraphic, IDragHandler, IBeginDragHandler, IEndDragHandler
+    public class RadarMap : MaskableGraphic, IPointerMoveHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
         int _dragingVertexIndex = -1;
 
@@ -53,11 +53,21 @@ namespace NinjaGame
         [field: SerializeField]
         public bool AllowChange { get; set; } = false;
 
+
+        [field: SerializeField]
+        public GameObject Handle { get; set; }
+
         /// <summary>
         /// 拖拽手柄大小
         /// </summary>
         [field: SerializeField]
         public float HandleSize { get; set; } = 15;
+
+        protected override void Start()
+        {
+            if (Handle != null)
+                Handle.SetActive(false);
+        }
 
         protected override void OnPopulateMesh(VertexHelper vh)
         {
@@ -88,6 +98,48 @@ namespace NinjaGame
             }
         }
 
+        void IPointerMoveHandler.OnPointerMove(PointerEventData eventData)
+        {
+            if (_dragingVertexIndex != -1)
+                return;
+            if (!AllowChange)
+                return;
+
+            var size = Size;
+            var radius = size / 2;
+            var handleRadius = HandleSize / 2;
+            var vertexCount = Values.Length;
+
+            var radianGap = Mathf.PI * 2 / vertexCount;
+            var pointerDistance = eventData.position;
+
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, Input.mousePosition, GetComponentInParent<Canvas>().worldCamera, out var mouseLocalPoint);
+
+            if (Handle != null)
+                Handle.SetActive(false);
+
+            for (int i = 0; i < vertexCount; i++)
+            {
+                var value = Mathf.Clamp01(Values[i]);
+                var cos = Mathf.Cos(i * radianGap);
+                var sin = Mathf.Sin(i * radianGap);
+                var x = cos * radius * value;
+                var y = sin * radius * value;
+
+                // 如果鼠标位置与雷达图一角端点的距离小于手柄大小
+                if (Vector2.Distance(mouseLocalPoint, new Vector2(x, y)) < HandleSize)
+                {
+                    if (Handle != null)
+                    {
+                        Handle.transform.position = transform.position + new Vector3(x, y, 0);
+                        Handle.SetActive(true);
+                    }
+
+                    return;
+                }
+            }
+        }
+
         void IDragHandler.OnDrag(PointerEventData eventData)
         {
             // 仅在有索引的时候进行拖拽
@@ -112,9 +164,20 @@ namespace NinjaGame
 
             // 点积取鼠标向量在当前方向上的投影, 并使用 Clamp 限制取值
             var distanceToCenter = Mathf.Clamp(Vector2.Dot(mouseLocalPoint, new Vector2(cos, sin)), 0, radius);
-            
+
             // 最终取值也限制下, 因为只能是 0~1
-            Values[_dragingVertexIndex] = Mathf.Clamp01(distanceToCenter / radius);
+            float newValue = Mathf.Clamp01(distanceToCenter / radius);
+
+            var newX = cos * radius * newValue;
+            var newY = sin * radius * newValue;
+
+            if (Handle != null)
+            {
+                Handle.transform.position = transform.position + new Vector3(newX, newY, 0);
+                Handle.SetActive(true);
+            }
+
+            Values[_dragingVertexIndex] = newValue;
             SetAllDirty();
         }
 
@@ -122,8 +185,6 @@ namespace NinjaGame
         {
             if (!AllowChange)
                 return;
-
-            print("begin drag");
 
             var size = Size;
             var radius = size / 2;
@@ -159,5 +220,4 @@ namespace NinjaGame
             _dragingVertexIndex = -1;
         }
     }
-
 }
