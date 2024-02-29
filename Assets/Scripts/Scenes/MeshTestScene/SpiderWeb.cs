@@ -8,15 +8,27 @@ namespace NinjaGame
     [RequireComponent(typeof(CanvasRenderer))]
     public class SpiderWeb : MaskableGraphic
     {
+        /// <summary>
+        /// 蛛网大小
+        /// </summary>
         [field: SerializeField]
         public float Size { get; set; } = 100;
 
+        /// <summary>
+        /// 顶点数量
+        /// </summary>
         [field: SerializeField]
         public int VertexCount { get; set; } = 6;
 
+        /// <summary>
+        /// 线条数量
+        /// </summary>
         [field: SerializeField]
         public int LineCount { get; set; } = 5;
 
+        /// <summary>
+        /// 线条厚度
+        /// </summary>
         [field: SerializeField]
         public float LineThickness { get; set; } = 1;
 

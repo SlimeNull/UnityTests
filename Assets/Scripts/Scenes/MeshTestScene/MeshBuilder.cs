@@ -5,16 +5,13 @@ namespace NinjaGame
     [RequireComponent(typeof(MeshFilter))]
     public class MeshBuilder : MonoBehaviour
     {
-        protected MeshFilter meshFilter;
+        private MeshFilter _meshFilter;
 
-        private void Awake()
-        {
-            meshFilter = GetComponent<MeshFilter>();
-        }
+        public MeshFilter MeshFilter => _meshFilter ??= GetComponent<MeshFilter>();
 
-        private void Start()
+        protected virtual void Awake()
         {
-            meshFilter.mesh = CreateMesh();
+            MeshFilter.mesh = CreateMesh();
         }
 
         protected virtual Mesh CreateMesh()
