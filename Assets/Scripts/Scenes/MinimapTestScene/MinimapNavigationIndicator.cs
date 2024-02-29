@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 namespace NinjaGame
 {
+    /// <summary>
+    /// 小地图导航路线显示器
+    /// </summary>
     [RequireComponent(typeof(CanvasRenderer))]
     public class MinimapNavigationIndicator : MaskableGraphic
     {
@@ -59,10 +62,18 @@ namespace NinjaGame
                 var nextPoint = circlePoints[i + 1];
 
                 var direction = nextPoint - currentPoint;
-                var directionRadius = Mathf.Tan(direction.y / direction.x);
-                var tangentRadius = directionRadius - Mathf.PI / 2;
 
-                pointOffset = new Vector2(Mathf.Cos(tangentRadius) * halfLineThickness, Mathf.Sin(tangentRadius) * halfLineThickness);
+                // 当前两点的角度
+                var directionRadian = Mathf.Atan2(direction.y, direction.x);
+
+                // 两点方向切线的角度
+                var tangentRadian = directionRadian - Mathf.PI / 2;
+
+                // 如果角度无效, 则 fallback 到 0
+                if (float.IsNaN(tangentRadian))
+                    tangentRadian = 0;
+
+                pointOffset = new Vector2(Mathf.Cos(tangentRadian) * halfLineThickness, Mathf.Sin(tangentRadian) * halfLineThickness);
 
                 vh.AddVert(currentPoint * radius + pointOffset, color, new Vector4());
                 vh.AddVert(currentPoint * radius - pointOffset, color, new Vector4());

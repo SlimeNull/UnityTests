@@ -7,6 +7,9 @@ namespace NinjaGame
 
     }
 
+    /// <summary>
+    /// 柏林噪声地形
+    /// </summary>
     public class PerlinTerrain : SampleTerrian
     {
         [field: SerializeField]
@@ -27,14 +30,17 @@ namespace NinjaGame
         protected override int GetZStart() => 0;
         protected override float Sample(int x, int z)
         {
+            // 根据 X 和 Z 进行采样
             float value = Mathf.PerlinNoise((PerlinOffset.x + (float)x * PerlinScale.x) / Size, (PerlinOffset.x + (float)z * PerlinScale.y) / Size);
             float total = 1;
 
             float nowPerlinSize = 1;
+
+            // 如果启用倍频, 则进行叠加
             for (int i = 0; i < Octaves; i++)
             {
                 nowPerlinSize /= 2;
-                value += Mathf.PerlinNoise(PerlinOffset.x + x, PerlinOffset.y + z) / nowPerlinSize;
+                value += Mathf.PerlinNoise((PerlinOffset.x + (float)x * PerlinScale.x) / Size, (PerlinOffset.x + (float)z * PerlinScale.y) / Size) / nowPerlinSize;
                 total += nowPerlinSize;
             }
 

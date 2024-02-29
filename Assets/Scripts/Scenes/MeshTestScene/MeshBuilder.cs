@@ -11,7 +11,11 @@ namespace NinjaGame
 
         protected virtual void Awake()
         {
-            MeshFilter.mesh = CreateMesh();
+            var mesh = CreateMesh();
+
+            MeshFilter.mesh = mesh;
+            if (GetComponent<MeshCollider>() is { } collider)
+                collider.sharedMesh = mesh;
         }
 
         protected virtual Mesh CreateMesh()

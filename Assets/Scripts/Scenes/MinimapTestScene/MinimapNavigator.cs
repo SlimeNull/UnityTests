@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 namespace NinjaGame
 {
+    /// <summary>
+    /// 小地图导航器
+    /// </summary>
     [RequireComponent(typeof(RectTransform))]
     public class MinimapNavigator : MonoBehaviour, IPointerClickHandler
     {
@@ -34,6 +37,8 @@ namespace NinjaGame
 
             if (Physics.Raycast(ray, out var hit, float.PositiveInfinity, MinimapCamera.cullingMask))
             {
+                // 启用 NavMeshAgent 并设置目标点
+                NavMeshAgent.isStopped = false;
                 NavMeshAgent.destination = hit.point;
 
                 if (NavigationIndicator is { } indicator)
