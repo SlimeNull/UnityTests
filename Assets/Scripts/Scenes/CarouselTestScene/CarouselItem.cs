@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace NinjaGame
+namespace UnityTests
 {
     public class CarouselItem : MonoBehaviour
     {

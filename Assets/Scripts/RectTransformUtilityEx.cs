@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-namespace NinjaGame.Assets.Scripts
+namespace UnityTests.Assets.Scripts
 {
     static class RectTransformUtilityEx
     {

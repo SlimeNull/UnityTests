@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
-namespace NinjaGame
+namespace UnityTests
 {
     [RequireComponent(typeof(RectTransform))]
     public class UICarousel : UIBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace NinjaGame
+namespace UnityTests
 {
     public class Carousel : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
     {

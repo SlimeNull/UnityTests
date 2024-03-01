@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace NinjaGame
+namespace UnityTests
 {
     public class GameInputLock : MonoBehaviour
     {

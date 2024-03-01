@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace NinjaGame
+namespace UnityTests
 {
     [RequireComponent(typeof(MeshFilter))]
     public class MakeCylinderMesh : MeshBuilder

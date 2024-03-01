@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace NinjaGame
+namespace UnityTests
 {
 
     public static class MeshUtils

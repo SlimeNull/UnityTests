@@ -1,9 +1,9 @@
-﻿using NinjaGame.Assets.Scripts;
+﻿using UnityTests.Assets.Scripts;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
-namespace NinjaGame
+namespace UnityTests
 {
     /// <summary>
     /// 小地图导航器

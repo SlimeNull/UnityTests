@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace NinjaGame
+namespace UnityTests
 {
 
     [RequireComponent(typeof(MeshFilter))]

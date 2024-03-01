@@ -1,4 +1,4 @@
-﻿namespace NinjaGame.Minecraft
+﻿namespace UnityTests.Minecraft
 {
     public enum BlockKind
     {

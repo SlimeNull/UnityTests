@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace NinjaGame
+namespace UnityTests
 {
     [RequireComponent(typeof(CanvasRenderer))]
     public class SpiderWeb : MaskableGraphic

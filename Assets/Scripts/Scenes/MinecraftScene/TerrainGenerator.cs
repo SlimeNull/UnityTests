@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NinjaGame.Minecraft
+namespace UnityTests.Minecraft
 {
     public class TerrainGenerator : MonoBehaviour
     {

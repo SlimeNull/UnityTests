@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace NinjaGame.Minecraft
+namespace UnityTests.Minecraft
 {
     public class BlockConfig : ScriptableObject
     {

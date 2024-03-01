@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using NinjaGame.Assets.Scripts;
+using UnityTests.Assets.Scripts;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-namespace NinjaGame
+namespace UnityTests
 {
     /// <summary>
     /// 小地图导航路线显示器

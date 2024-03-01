@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace NinjaGame
+namespace UnityTests
 {
     /// <summary>
     /// 小地图的标记显示

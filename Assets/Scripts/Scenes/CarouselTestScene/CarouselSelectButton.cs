@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace NinjaGame
+namespace UnityTests
 {
     [RequireComponent(typeof(Button))]
     public class CarouselSelectButton : MonoBehaviour

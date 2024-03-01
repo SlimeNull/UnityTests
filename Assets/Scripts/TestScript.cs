@@ -1,4 +1,4 @@
-﻿namespace NinjaGame.Assets.Scripts
+﻿namespace UnityTests.Assets.Scripts
 {
     internal class TestScript
     {

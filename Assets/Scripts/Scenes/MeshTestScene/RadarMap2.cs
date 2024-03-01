@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace NinjaGame
+namespace UnityTests
 {
     /// <summary>
     /// 雷达图

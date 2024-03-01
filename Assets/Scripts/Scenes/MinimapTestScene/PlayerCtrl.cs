@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace NinjaGame
+namespace UnityTests
 {
     [RequireComponent(typeof(CharacterController))]
     public class PlayerCtrl : MonoBehaviour
