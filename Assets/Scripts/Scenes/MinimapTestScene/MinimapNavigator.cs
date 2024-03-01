@@ -38,7 +38,7 @@ namespace NinjaGame
             if (Physics.Raycast(ray, out var hit, float.PositiveInfinity, MinimapCamera.cullingMask))
             {
                 // 启用 NavMeshAgent 并设置目标点
-                NavMeshAgent.isStopped = false;
+                NavMeshAgent.enabled = true;
                 NavMeshAgent.destination = hit.point;
 
                 if (NavigationIndicator is { } indicator)
