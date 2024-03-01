@@ -1,0 +1,1093 @@
+fileFormatVersion: 2
+guid: c3e423c15ac3ae840b6f455f0b272a2d
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -682322594494070448
+    second: Stand02
+  - first:
+      74: 968959671155216442
+    second: Annoyyance01
+  - first:
+      74: 5685756368811155282
+    second: Bed01
+  - first:
+      74: 8236816621015521932
+    second: Bed02
+  - first:
+      74: -630893617948113354
+    second: Bed03
+  - first:
+      74: -239973317991949491
+    second: Bed04
+  - first:
+      74: 4134231892466029920
+    second: Bed05
+  - first:
+      74: -1026077173367786230
+    second: Bench01
+  - first:
+      74: -1726406511816163560
+    second: Bench02
+  - first:
+      74: -2041398924105805834
+    second: Bench03
+  - first:
+      74: 1208823329081746896
+    second: Cabinet01
+  - first:
+      74: 4371444386578573139
+    second: Catch01
+  - first:
+      74: 5040839770304712086
+    second: Catch02
+  - first:
+      74: 2359091625574207037
+    second: Chair01
+  - first:
+      74: -5061341150303441675
+    second: Chair02
+  - first:
+      74: -1135420760396713197
+    second: Chair03
+  - first:
+      74: -3058810135687799377
+    second: Gift01
+  - first:
+      74: 1689399177717838838
+    second: Hug01
+  - first:
+      74: -2630644030838996839
+    second: Kiss01
+  - first:
+      74: 6038710924835032886
+    second: Lazy01
+  - first:
+      74: 4256778679724025988
+    second: Love01
+  - first:
+      74: -7884299797830032376
+    second: Lovesickness01
+  - first:
+      74: -5006534018573239697
+    second: No01
+  - first:
+      74: 1077587671517862229
+    second: Refuse01
+  - first:
+      74: 8181768634338087079
+    second: Scratch01
+  - first:
+      74: -5281456685303330159
+    second: Scratch02
+  - first:
+      74: 5666227886523526347
+    second: Shoot01
+  - first:
+      74: -5298533695428204825
+    second: Sofa01
+  - first:
+      74: 6598250495492629966
+    second: Sofa02
+  - first:
+      74: 7026066998803210201
+    second: Sofa03
+  - first:
+      74: 2138106495289988981
+    second: Stand01
+  - first:
+      74: 4562889936175097064
+    second: Stand03
+  - first:
+      74: -6599625316581832481
+    second: StandReward01
+  - first:
+      74: -7629790145391236522
+    second: Talk01
+  - first:
+      74: 4318789457203399614
+    second: Tired01
+  - first:
+      74: -7687452805462462019
+    second: Touch01
+  - first:
+      74: 4801961523907322918
+    second: Touch02
+  - first:
+      74: 4485118894649010602
+    second: Walk01
+  - first:
+      74: -4759125325950046149
+    second: Walk02
+  - first:
+      74: -4232417938985535495
+    second: Walk03
+  - first:
+      74: -3743126458273634901
+    second: Catch03
+  - first:
+      74: -2793449975647106185
+    second: Click01
+  - first:
+      74: 7667649436163841858
+    second: BedR01
+  - first:
+      74: 10148810897574230
+    second: BedR02
+  - first:
+      74: -1536448279589694278
+    second: BedR03
+  - first:
+      74: -6287059702208201084
+    second: BedR04
+  - first:
+      74: -1985616010579060271
+    second: BedR05
+  - first:
+      74: -886206124811307748
+    second: Dance
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QR2Bianka01001
+    second: {fileID: 2100000, guid: a51949977803696459b089a558f3616d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XShadowVolume
+    second: {fileID: 2100000, guid: e791f88ae4342e545b41ab27290e97b7, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Stand02' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Annoyyance01' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'Bed01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Spine1' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Bed02' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' has translation animation that will be
+      discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LThigh' has translation animation
+      that will be discarded.\n\t'Bip001RThigh' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Bed03' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'Bed04' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Bed05' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Spine1' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Bench01' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' has translation animation that will be
+      discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LThigh' has translation animation
+      that will be discarded.\n\t'Bip001RThigh' has translation animation that will
+      be discarded.\n\t'Bip001Spine1' has translation animation that will be discarded.\n\t'Bip001Neck'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Bip001LClavicle'
+      has translation animation that will be discarded.\n\t'Bip001RClavicle' has
+      translation animation that will be discarded.\n\nClip 'Bench02' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Bip001Spine' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Bip001LThigh'
+      has translation animation that will be discarded.\n\t'Bip001RThigh' has translation
+      animation that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LClavicle' has
+      translation animation that will be discarded.\n\t'Bip001RClavicle' has translation
+      animation that will be discarded.\n\nClip 'Bench03' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Cabinet01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'Catch01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'Catch02' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'Chair01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Spine1' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Chair02' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Chair03' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Spine1' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Gift01' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'Hug01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Kiss01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Lazy01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'Love01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Spine1' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Lovesickness01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'No01' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Refuse01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Scratch01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'Scratch02' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Shoot01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'Sofa01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Sofa02' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Sofa03' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Spine1' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Stand01' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' has translation animation that will be
+      discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LThigh' has translation animation
+      that will be discarded.\n\t'Bip001RThigh' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Stand03' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' has translation animation that will be
+      discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LThigh' has translation animation
+      that will be discarded.\n\t'Bip001RThigh' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'StandReward01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Spine1' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Talk01' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' has translation animation that will be
+      discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LThigh' has translation animation
+      that will be discarded.\n\t'Bip001RThigh' has translation animation that will
+      be discarded.\n\nClip 'Tired01' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'Bip001Spine' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LThigh' has translation animation
+      that will be discarded.\n\t'Bip001RThigh' has translation animation that will
+      be discarded.\n\nClip 'Touch01' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'Bip001Spine' has translation animation that will be discarded.\n\t'Bip001Spine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Bip001LThigh'
+      has translation animation that will be discarded.\n\t'Bip001RThigh' has translation
+      animation that will be discarded.\n\nClip 'Touch02' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Spine1' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Walk01' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'Walk02' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Walk03' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Catch03' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'Click01' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Spine1' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'BedR01' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' has translation animation that will be
+      discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LThigh' has translation animation
+      that will be discarded.\n\t'Bip001RThigh' has translation animation that will
+      be discarded.\n\t'Bip001Spine1' has translation animation that will be discarded.\n\t'Bip001Neck'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Bip001LClavicle'
+      has translation animation that will be discarded.\n\t'Bip001RClavicle' has
+      translation animation that will be discarded.\n\nClip 'BedR02' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Bip001Spine' has translation
+      animation that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'BedR03' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\nClip 'BedR04' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n\nClip 'BedR05' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Bip001Spine' has translation animation
+      that will be discarded.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Spine1' has translation animation that will
+      be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Bip001LClavicle' has translation animation
+      that will be discarded.\n\t'Bip001RClavicle' has translation animation that
+      will be discarded.\n\nClip 'Dance' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Bip001Spine' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LThigh' has translation
+      animation that will be discarded.\n\t'Bip001RThigh' has translation animation
+      that will be discarded.\n\t'Bip001Neck' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Bip001LClavicle' has translation
+      animation that will be discarded.\n\t'Bip001RClavicle' has translation animation
+      that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: QR2BiankaMd010011 #128877(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bip001
+      parentName: QR2BiankaMd010011 #128877(Clone)
+      position: {x: 0.017324228, y: 0.2843321, z: 0.0057780836}
+      rotation: {x: -0.46736598, y: 0.51377904, z: 0.5552949, w: 0.45743605}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bip001Pelvis
+      parentName: Bip001
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.50583434, y: 0.48873466, z: 0.49235013, w: 0.51270014}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bip001Spine
+      parentName: Bip001Pelvis
+      position: {x: -0.04179512, y: -0.0016216518, z: 0.00043979406}
+      rotation: {x: 0.009900102, y: 0.0054627107, z: 0.08869107, w: 0.99599504}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: Bip001LThigh
+      parentName: Bip001Spine
+      position: {x: 0.04086096, y: -0.0045118663, z: 0.061948236}
+      rotation: {x: -0.0055927914, y: 0.9901678, z: -0.05041044, w: 0.1303662}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+    - name: Bip001LCalf
+      parentName: Bip001LThigh
+      position: {x: -0.11903478, y: 0, z: 0}
+      rotation: {x: 0.0000000047936837, y: -0.000000014231465, z: 0.19920397, w: 0.97995806}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Bip001LFoot
+      parentName: Bip001LCalf
+      position: {x: -0.1001077, y: -0.0000000047683715, z: 0.000000009536743}
+      rotation: {x: 0.023835888, y: 0.10595675, z: -0.14226861, w: 0.98385197}
+      scale: {x: 0.99999994, y: 1, z: 0.9999998}
+    - name: Bip001LToe0
+      parentName: Bip001LFoot
+      position: {x: -0.07156818, y: 0.04930249, z: 0.000000009536743}
+      rotation: {x: -0.07393889, y: -0.07393871, z: -0.7032303, w: 0.70323056}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpringLThigh
+      parentName: Bip001LThigh
+      position: {x: -0.063000016, y: 0.0031000017, z: 0.0030999873}
+      rotation: {x: 0.00000006442951, y: -0.000000034051478, z: 0.000000013038514, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bip001RThigh
+      parentName: Bip001Spine
+      position: {x: 0.0419906, y: -0.007073655, z: -0.061832026}
+      rotation: {x: 0.09170384, y: 0.9899378, z: 0.10067325, w: 0.03845078}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1}
+    - name: Bip001RCalf
+      parentName: Bip001RThigh
+      position: {x: -0.11903478, y: 0.0000000023841857, z: -0.0000000047683715}
+      rotation: {x: 0.0000000015245949, y: 0.0000000010951106, z: 0.10356784, w: 0.9946224}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Bip001RFoot
+      parentName: Bip001RCalf
+      position: {x: -0.100107744, y: 0.0000000047683715, z: 0.0000000047683715}
+      rotation: {x: -0.0918127, y: 0.023690715, z: -0.13401851, w: 0.9864321}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: Bip001RToe0
+      parentName: Bip001RFoot
+      position: {x: -0.07156818, y: 0.049302507, z: 0}
+      rotation: {x: 0.0960052, y: 0.09470596, z: -0.7054012, w: 0.69586134}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: SpringRThigh
+      parentName: Bip001RThigh
+      position: {x: -0.063000016, y: 0.0031999978, z: -0.0044999835}
+      rotation: {x: -0.000000024854668, y: 0.00000005180481, z: 0.000000048428767, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bip001Spine1
+      parentName: Bip001Spine
+      position: {x: -0.07133407, y: -0.0000769949, z: 0.000009045601}
+      rotation: {x: -0.057176042, y: -0.011624734, z: 0.071988344, w: 0.9956975}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Bip001Neck
+      parentName: Bip001Spine1
+      position: {x: -0.121148676, y: -0.013512505, z: -0.0000003492832}
+      rotation: {x: 0.011825975, y: 0.005568296, z: -0.098010086, w: 0.9950996}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: Bip001Head
+      parentName: Bip001Neck
+      position: {x: -0.04294788, y: -0.033575285, z: -0.000000009536743}
+      rotation: {x: 0.06585048, y: -0.017552065, z: -0.0036516134, w: 0.99766845}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Bone124 1
+      parentName: Bip001Head
+      position: {x: -0.07037571, y: 0.10946987, z: -0.15786074}
+      rotation: {x: -0.054602172, y: 0.7053914, z: 0.7059786, w: 0.03218483}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone126
+      parentName: Bone124 1
+      position: {x: -0.12215427, y: -0.0000000047683715, z: -0.000000076293944}
+      rotation: {x: 0.000000542413, y: 0.00000006076196, z: 0.124880634, w: 0.99217176}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: Bone125
+      parentName: Bone126
+      position: {x: -0.1362194, y: -0.000000038146972, z: 0.00000002861023}
+      rotation: {x: -0.0000014233775, y: 0.000000061966546, z: -0.08134027, w: 0.9966864}
+      scale: {x: 1.0000001, y: 0.9999998, z: 0.99999994}
+    - name: Bone124M 1
+      parentName: Bip001Head
+      position: {x: -0.07037571, y: 0.10946943, z: 0.15786006}
+      rotation: {x: 0.032184944, y: 0.70597756, z: 0.7053924, w: -0.054601975}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Bone126M
+      parentName: Bone124M 1
+      position: {x: -0.12215427, y: 0.000000038146972, z: -0.000000076293944}
+      rotation: {x: -0.000000023375016, y: -0.000000047746116, z: -0.12488056, w: 0.9921718}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999999}
+    - name: Bone125M
+      parentName: Bone126M
+      position: {x: -0.13621944, y: 0.000000076293944, z: 0.000000047683717}
+      rotation: {x: 0.0000005092145, y: 0.00000008640941, z: 0.081340194, w: 0.9966864}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Bone127 1
+      parentName: Bip001Head
+      position: {x: -0.14830631, y: 0.2038464, z: -0.08835463}
+      rotation: {x: 0.27409357, y: 0.7834065, z: 0.5168214, w: -0.20986368}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone129
+      parentName: Bone127 1
+      position: {x: -0.07647297, y: 0, z: 0}
+      rotation: {x: 0.02480823, y: 0.009404894, z: 0.33935043, w: 0.9402858}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone130
+      parentName: Bone129
+      position: {x: -0.08368799, y: -0.00000015258789, z: 0.00000019073487}
+      rotation: {x: 0.023094138, y: -0.035930887, z: 0.5332317, w: 0.8448903}
+      scale: {x: 0.9999998, y: 1, z: 0.9999999}
+    - name: Bone128
+      parentName: Bone130
+      position: {x: -0.09145656, y: -0.0000010490418, z: -0.000000076293944}
+      rotation: {x: -0.1668109, y: 0.055184297, z: -0.53700143, w: 0.8250808}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+    - name: MarkCase
+      parentName: Bip001Head
+      position: {x: -0.526, y: 0.041000005, z: 0}
+      rotation: {x: 0.000000008938351, y: -0.00000005265146, z: -0.000000022351742, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bip001LClavicle
+      parentName: Bip001Neck
+      position: {x: 0.032962915, y: 0.003925037, z: 0.015777903}
+      rotation: {x: -0.6431319, y: -0.108284764, z: 0.75714606, w: -0.03722315}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+    - name: Bip001LUpperArm
+      parentName: Bip001LClavicle
+      position: {x: -0.046580065, y: 0, z: 0.000000038146972}
+      rotation: {x: -0.007057767, y: -0.37173077, z: -0.24140958, w: 0.8963748}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Bip001LForearm
+      parentName: Bip001LUpperArm
+      position: {x: -0.09817005, y: -0.0000000035762788, z: 0.000000019073486}
+      rotation: {x: 0.000000013872576, y: 0.000000032290473, z: 0.15222931, w: 0.9883452}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Bip001LHand
+      parentName: Bip001LForearm
+      position: {x: -0.08396343, y: 0, z: 0}
+      rotation: {x: -0.6229226, y: 0.15620247, z: 0.08665575, w: 0.76161605}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Bip001LFinger0
+      parentName: Bip001LHand
+      position: {x: -0.035712436, y: 0.015898857, z: -0.029567858}
+      rotation: {x: 0.6416875, y: -0.45126724, z: -0.049568847, w: 0.61817306}
+      scale: {x: 0.9999998, y: 0.9999999, z: 0.9999998}
+    - name: Bip001LFinger1
+      parentName: Bip001LHand
+      position: {x: -0.046212748, y: -0.005301704, z: 0.000004223585}
+      rotation: {x: -0.0037770977, y: 0.0005952976, z: 0.15568398, w: 0.9877995}
+      scale: {x: 0.9999998, y: 0.99999976, z: 0.9999999}
+    - name: Bip001RClavicle
+      parentName: Bip001Neck
+      position: {x: 0.03337612, y: 0.0032329892, z: -0.01504875}
+      rotation: {x: 0.6822928, y: 0.14467064, z: 0.71660095, w: 0.0054799346}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Bip001RUpperArm
+      parentName: Bip001RClavicle
+      position: {x: -0.046580084, y: 0.000000009536743, z: 0}
+      rotation: {x: 0.13218735, y: 0.44898972, z: -0.22603951, w: 0.85430723}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Bip001RForearm
+      parentName: Bip001RUpperArm
+      position: {x: -0.09817005, y: 0.000000009536743, z: 0.000000019073486}
+      rotation: {x: 0.000000017678405, y: -0.000000011470101, z: 0.20831604, w: 0.97806156}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Bip001RHand
+      parentName: Bip001RForearm
+      position: {x: -0.08396345, y: 0, z: 0.000000019073486}
+      rotation: {x: 0.41841823, y: -0.044057444, z: 0.13804549, w: 0.89662063}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Bip001RFinger0
+      parentName: Bip001RHand
+      position: {x: -0.035712443, y: 0.015898857, z: 0.029567862}
+      rotation: {x: -0.56579626, y: 0.47617313, z: 0.08139731, w: 0.6682127}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: Bip001RFinger1
+      parentName: Bip001RHand
+      position: {x: -0.046212748, y: -0.005301666, z: -0.000004224777}
+      rotation: {x: 0.004026368, y: -0.0023484728, z: 0.12188194, w: 0.9925337}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: Bone001
+      parentName: Bip001Spine1
+      position: {x: -0.07581276, y: 0.034563243, z: -0.039267812}
+      rotation: {x: -0.017583912, y: 0.69023114, z: 0.7125162, w: -0.12487029}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Bone003 1
+      parentName: Bone001
+      position: {x: -0.07343301, y: -0.000000023841858, z: 0.000000076293944}
+      rotation: {x: -0.00012482802, y: -0.005024309, z: 0.0030881183, w: 0.9999826}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.9999999}
+    - name: Bone004
+      parentName: Bone003 1
+      position: {x: -0.09036878, y: -0.000000009536743, z: 0.000000009536743}
+      rotation: {x: -0.0011700819, y: -0.011333932, z: 0.015765352, w: 0.9998108}
+      scale: {x: 0.9999999, y: 1, z: 0.9999998}
+    - name: Bone002
+      parentName: Bone004
+      position: {x: -0.10804456, y: -0.00000012397766, z: -0.000000009536743}
+      rotation: {x: 0.000000007450582, y: -0.000000044703484, z: -0.000000022351744, w: 1}
+      scale: {x: 1, y: 0.9999995, z: 0.9999997}
+    - name: Bone001(mirrored)
+      parentName: Bip001Spine1
+      position: {x: -0.0758127, y: 0.034563143, z: 0.039270062}
+      rotation: {x: -0.15317367, y: 0.70697135, z: 0.69038427, w: 0.009944594}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Bone003(mirrored) 1
+      parentName: Bone001(mirrored)
+      position: {x: -0.07343301, y: 0.0000000047683715, z: 0.000000085830685}
+      rotation: {x: -0.00013177097, y: -0.018006952, z: -0.012030206, w: 0.9997655}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Bone004(mirrored)
+      parentName: Bone003(mirrored) 1
+      position: {x: -0.09036873, y: -0.000000009536743, z: -0.000000038146972}
+      rotation: {x: -0.001530989, y: -0.0409855, z: -0.025784964, w: 0.99882585}
+      scale: {x: 1.0000001, y: 1, z: 0.9999999}
+    - name: Bone002(mirrored)
+      parentName: Bone004(mirrored)
+      position: {x: -0.108044595, y: 0.000000085830685, z: 0}
+      rotation: {x: 0.00000009313226, y: -0.000000007450582, z: -0.000000007450581, w: 1}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: Bone005
+      parentName: Bip001Spine1
+      position: {x: -0.06619276, y: -0.06996453, z: -0.00000011563299}
+      rotation: {x: 0.10078674, y: 0.69627076, z: -0.6934719, w: -0.15538907}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Bone006 1
+      parentName: Bone005
+      position: {x: -0.11363313, y: -0.06684123, z: -0.00097655674}
+      rotation: {x: -0.069558054, y: -0.05614092, z: 0.21748716, w: 0.97196156}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: Bone008
+      parentName: Bone006 1
+      position: {x: -0.08485301, y: 0.0000000096485016, z: 0.00000008665026}
+      rotation: {x: -0.0019930669, y: -0.0043156203, z: 0.05150554, w: 0.9986614}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: Bone007
+      parentName: Bone008
+      position: {x: -0.049161173, y: -0.000000019073486, z: 0.00000022888185}
+      rotation: {x: -0.00000035017734, y: 0.000000022351708, z: 0.00000008940697, w: 1}
+      scale: {x: 1.0000001, y: 0.9999998, z: 0.9999999}
+    - name: Bone006(mirrored) 1
+      parentName: Bone005
+      position: {x: -0.113631286, y: 0.066838734, z: -0.0009766209}
+      rotation: {x: 0.066296756, y: -0.06252032, z: -0.18173787, w: 0.97911555}
+      scale: {x: 0.9999999, y: 1, z: 1.0000002}
+    - name: Bone009
+      parentName: Bone006(mirrored) 1
+      position: {x: -0.08647426, y: -0.000000031292437, z: -0.000000042319297}
+      rotation: {x: -0.0015140692, y: -0.0096905185, z: 0.056374166, w: 0.9983616}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Bone007(mirrored)
+      parentName: Bone009
+      position: {x: -0.047704894, y: 0, z: 0.00000019073487}
+      rotation: {x: -0.0011234545, y: 0.00007283802, z: -0.004563017, w: 0.999989}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: HitCase
+      parentName: Bip001Spine1
+      position: {x: -0.009529032, y: 0.06607076, z: 0}
+      rotation: {x: -0.0000001249518, y: 0.00000014073923, z: 1.7360841e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpringSpine1
+      parentName: Bip001Spine1
+      position: {x: -0.026, y: -0.022999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone007M 1
+      parentName: Bip001Spine
+      position: {x: -0.0410996, y: 0.04687774, z: 0.05523525}
+      rotation: {x: -0.17172003, y: 0.47563607, z: 0.86265475, w: -0.010456986}
+      scale: {x: 0.99999994, y: 1, z: 1.0000002}
+    - name: Bone009M
+      parentName: Bone007M 1
+      position: {x: -0.04576923, y: -0.0000000010058283, z: -0.00000001810491}
+      rotation: {x: -0.00073773833, y: 0.0045201657, z: 0.00097009254, w: 0.99998903}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: Bone008(mirrored)
+      parentName: Bone009M
+      position: {x: -0.077765554, y: 0.000000023841858, z: 0.000000019073486}
+      rotation: {x: -0.000017648563, y: -0.000000074509884, z: 0.00000023096668, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000004}
+    - name: Bone010 1
+      parentName: Bip001Spine
+      position: {x: -0.041099586, y: 0.046877887, z: -0.055159163}
+      rotation: {x: -0.010456592, y: 0.8626544, z: 0.4756369, w: -0.17171967}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000001}
+    - name: Bone011
+      parentName: Bone010 1
+      position: {x: -0.04655202, y: -0.000000010570511, z: -0.00000003412366}
+      rotation: {x: 0.00027440526, y: 0.0043045753, z: -0.0038051836, w: 0.9999835}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Bone0123
+      parentName: Bone011
+      position: {x: -0.07776512, y: -0.000000023841858, z: 0.000000019073486}
+      rotation: {x: -0.00000042282053, y: 4.0953365e-14, z: -0.000000096857555, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: Bone010a 1
+      parentName: Bip001Spine
+      position: {x: -0.04105885, y: -0.058862776, z: 0.053668726}
+      rotation: {x: -0.14894742, y: -0.5611783, z: 0.8139101, w: -0.02106925}
+      scale: {x: 0.9999998, y: 1.0000002, z: 1}
+    - name: Bone012
+      parentName: Bone010a 1
+      position: {x: -0.045056902, y: -1.4923983e-10, z: 0.0000000016391277}
+      rotation: {x: -0.0006171304, y: -0.0048783435, z: 0.001196192, w: 0.99998724}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: Bone011 1
+      parentName: Bone012
+      position: {x: -0.06959914, y: 0, z: -0.000000019073486}
+      rotation: {x: -0.0000003948807, y: -0.000000052154036, z: -0.00000005215408, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Bone010M 1
+      parentName: Bip001Spine
+      position: {x: -0.04105889, y: -0.058862627, z: -0.054004457}
+      rotation: {x: -0.021069337, y: 0.813911, z: -0.56117696, w: -0.14894746}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1.0000002}
+    - name: Bone012M
+      parentName: Bone010M 1
+      position: {x: -0.04505693, y: -0.000000032037498, z: -0.000000010430813}
+      rotation: {x: 0.0003044605, y: -0.00594741, z: -0.00039771196, w: 0.9999822}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: Bone011(mirrored)
+      parentName: Bone012M
+      position: {x: -0.069599114, y: 0, z: -0.000000019073486}
+      rotation: {x: -0.00000034458927, y: -0.000000037252878, z: 0.0000000074505633, w: 1}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000001}
+    - name: Bone013 1
+      parentName: Bip001Spine
+      position: {x: -0.052321237, y: -0.008099877, z: -0.08133827}
+      rotation: {x: -0.011241209, y: 0.9750206, z: -0.002557352, w: -0.22181518}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000001}
+    - name: Bone015
+      parentName: Bone013 1
+      position: {x: -0.04640281, y: -0.0000000016903504, z: -0.000000009536743}
+      rotation: {x: 0.00056904566, y: -0.001577169, z: -0.004835215, w: 0.99998695}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: Bone014
+      parentName: Bone015
+      position: {x: -0.077849634, y: -0.000000020265581, z: 0}
+      rotation: {x: -0.0000005261973, y: -0.0000000149011505, z: -0.000000021420428, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1.0000001}
+    - name: Bone013M 1
+      parentName: Bip001Spine
+      position: {x: -0.052321266, y: -0.008100113, z: 0.08182062}
+      rotation: {x: -0.2218154, y: -0.0025578195, z: 0.9750205, w: -0.011241314}
+      scale: {x: 1, y: 1.0000001, z: 0.9999999}
+    - name: Bone015M
+      parentName: Bone013M 1
+      position: {x: -0.04640295, y: -2.2351743e-10, z: 0.000000020265581}
+      rotation: {x: -0.0009312639, y: -0.000074380376, z: 0.003257201, w: 0.9999943}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000001}
+    - name: Bone014(mirrored)
+      parentName: Bone015M
+      position: {x: -0.077849574, y: 0.00000002324581, z: -0.000000019073486}
+      rotation: {x: -0.0000005299225, y: -0.00000001490116, z: -9.313305e-10, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: SpringSpine
+      parentName: Bip001Spine
+      position: {x: 0.002, y: -0.01, z: 0}
+      rotation: {x: -0.00000006534742, y: 0.00000014076306, z: -5.6471577e-11, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DynamicBone
+      parentName: QR2BiankaMd010011 #128877(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone003
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone003(mirrored)
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone006
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone006(mirrored)
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone007M
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone010
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone010a
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone010M
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone013
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone013M
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone124
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone124M
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone127
+      parentName: DynamicBone
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: QR2BiankaMd010011 1
+      parentName: QR2BiankaMd010011 #128877(Clone)
+      position: {x: 0.000000038146972, y: -0.000000076293944, z: -0.00000014305114}
+      rotation: {x: -0.70710665, y: 0.00000016846398, z: 0.00000016854624, w: 0.70710695}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: QR2BiankaMd010011MeshShadowVolume
+      parentName: QR2BiankaMd010011 1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 100
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
