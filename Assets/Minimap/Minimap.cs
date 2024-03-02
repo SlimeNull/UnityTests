@@ -8,7 +8,7 @@ namespace UnityTests
         /// 屏幕小地图显示大小
         /// </summary>
         [field: SerializeField]
-        public float Size { get; set; } = 200;
+        public float Size { get; set; } = 100;
 
         /// <summary>
         /// 小地图显示的区域大小
