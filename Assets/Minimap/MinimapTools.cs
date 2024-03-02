@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 
 namespace UnityTests
@@ -17,6 +18,7 @@ namespace UnityTests
         string _textureSizeStr = "1024";
         string _cameraHeightStr = "5";
         string _minimapAreaSizeStr = "50";
+        int _minimapLayers = 0;
 
         int _selectedMinimapType = 0;
         string _createMinimapAreaSizeStr = "50";
@@ -28,7 +30,7 @@ namespace UnityTests
         {
             EditorGUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            GUILayout.Label("Texture tool");
+            GUILayout.Label(text);
             GUILayout.FlexibleSpace();
             EditorGUILayout.EndHorizontal();
         }
@@ -45,16 +47,16 @@ namespace UnityTests
             var minimapNavigator = minimapObject.AddComponent<MinimapNavigator>();
             var minimapIndicator = minimapObject.AddComponent<MinimapIndicator>();
 
-            GameObject iconsObject = new GameObject("Icons");
-            iconsObject.transform.SetParent(minimapObject.transform);
-            minimapIndicator.IconsSlot = iconsObject.transform;
-
             GameObject navPathRendererObject = new GameObject("NavigationPathRenderer");
             navPathRendererObject.transform.SetParent(minimapObject.transform);
 
             var navPathRenderer = navPathRendererObject.AddComponent<MinimapNavigationPathRenderer>();
             navPathRenderer.Minimap = minimap;
             navPathRenderer.raycastTarget = false;
+
+            GameObject iconsObject = new GameObject("Icons");
+            iconsObject.transform.SetParent(minimapObject.transform);
+            minimapIndicator.IconsSlot = iconsObject.transform;
 
             return minimap;
         }
@@ -163,6 +165,10 @@ namespace UnityTests
             GUILayout.Label("Minimap area size: ");
             _minimapAreaSizeStr = GUILayout.TextField(_minimapAreaSizeStr);
 
+            GUILayout.Label("Minimap layers: ");
+            LayerMask tempMask = EditorGUILayout.MaskField( InternalEditorUtility.LayerMaskToConcatenatedLayersMask(_minimapLayers), InternalEditorUtility.layers);
+            _minimapLayers = InternalEditorUtility.ConcatenatedLayersMaskToLayerMask(tempMask);
+
             GUILayout.Space(10);
 
             if (!int.TryParse(_textureSizeStr, out var textureSize) ||
@@ -185,6 +191,7 @@ namespace UnityTests
                 cameraGameObject.transform.eulerAngles = new Vector3(90, 0, 0);
                 cameraGameObject.transform.position = new Vector3(0, cameraHeight, 0);
 
+                camera.cullingMask = _minimapLayers;
                 camera.clearFlags = CameraClearFlags.SolidColor;
                 camera.backgroundColor = new Color(0, 0, 0, 0);
                 camera.orthographic = true;
