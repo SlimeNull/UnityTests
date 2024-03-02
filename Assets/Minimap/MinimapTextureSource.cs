@@ -21,5 +21,10 @@ namespace UnityTests
         /// 地图世界中心点的 UV 坐标
         /// </summary>
         public abstract Vector2 Pivot { get; }
+
+        /// <summary>
+        /// 地图以中心点为标准进行的旋转量
+        /// </summary>
+        public abstract float Rotation { get; }
     }
 }

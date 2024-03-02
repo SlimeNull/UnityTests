@@ -37,13 +37,26 @@ namespace UnityTests
             var offsetXInTexture = worldPoint.x / minimapAreaSize;
             var offsetYInTexture = worldPoint.z / minimapAreaSize;
 
-            var uvCenter = _minimap.TextureSource.Pivot + new Vector2(offsetXInTexture, offsetYInTexture);
+            var uvRotation = _minimap.TextureSource.Rotation;
+            var uvRightRotation = uvRotation;
+            var uvUpRotation = uvRotation + Mathf.PI / 2;
+
+            var rotatedUvRotation = _minimap.TextureSource.Rotation + _minimap.Rotation;
+            var rotatedUvRightRotation = rotatedUvRotation;
+            var rotatedUvUpRotation = rotatedUvRotation + Mathf.PI / 2;
+
+            var uvUp = new Vector2(Mathf.Cos(uvUpRotation), Mathf.Sin(uvUpRotation));
+            var uvRight = new Vector2(Mathf.Cos(uvRightRotation), Mathf.Sin(uvRightRotation));
+            var rotatedUvUp = new Vector2(Mathf.Cos(rotatedUvUpRotation), Mathf.Sin(rotatedUvUpRotation));
+            var rotatedUvRight = new Vector2(Mathf.Cos(rotatedUvRightRotation), Mathf.Sin(rotatedUvRightRotation));
+
+            var uvCenter = _minimap.TextureSource.Pivot + offsetXInTexture * uvRight + offsetYInTexture * uvUp;
             var uvOffset = 0.5f / _minimap.Scale;
 
-            var vert1uv = new Vector2(uvCenter.x - uvOffset, uvCenter.y - uvOffset);
-            var vert2uv = new Vector2(uvCenter.x - uvOffset, uvCenter.y + uvOffset);
-            var vert3uv = new Vector2(uvCenter.x + uvOffset, uvCenter.y + uvOffset);
-            var vert4uv = new Vector2(uvCenter.x + uvOffset, uvCenter.y - uvOffset);
+            var vert1uv = uvCenter - rotatedUvRight * uvOffset - rotatedUvUp * uvOffset;
+            var vert2uv = uvCenter - rotatedUvRight * uvOffset + rotatedUvUp * uvOffset;
+            var vert3uv = uvCenter + rotatedUvRight * uvOffset + rotatedUvUp * uvOffset;
+            var vert4uv = uvCenter + rotatedUvRight * uvOffset - rotatedUvUp * uvOffset;
 
             var radius = _minimap.Size / 2;
 

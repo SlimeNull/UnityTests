@@ -15,6 +15,9 @@ namespace UnityTests
         {
             get
             {
+                if (RenderCamera == null)
+                    return new Vector2(0.5f, 0.5f);
+
                 var worldPositionOffset = RenderCamera.transform.position;
 
                 var pivot = new Vector2(0.5f, 0.5f);
@@ -22,6 +25,17 @@ namespace UnityTests
                 pivot.y -= worldPositionOffset.z / AreaSize;
 
                 return pivot;
+            }
+        }
+
+        public override float Rotation
+        {
+            get
+            {
+                if (RenderCamera == null)
+                    return 0;
+
+                return RenderCamera.transform.eulerAngles.y * Mathf.Deg2Rad;
             }
         }
 
@@ -34,9 +48,9 @@ namespace UnityTests
             else
             {
                 var eulerAngles = RenderCamera.transform.eulerAngles;
-                if (eulerAngles.x != 90 || eulerAngles.y != 0 || eulerAngles.z != 0)
+                if (eulerAngles.x != 90 || eulerAngles.z != 0)
                 {
-                    Debug.LogWarning("Invalid rotation of render camera, must be euler angles (90, 0, 0)");
+                    Debug.LogWarning("Invalid rotation of render camera, must be euler angles (90, n, 0)");
                 }
             }
         }

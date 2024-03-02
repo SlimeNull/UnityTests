@@ -4,15 +4,18 @@ using UnityEngine.EventSystems;
 namespace UnityTests
 {
     [RequireComponent(typeof(Minimap))]
-    public class MinimapScaler : MonoBehaviour, IScrollHandler
+    public class MinimapModifier : MonoBehaviour, IScrollHandler
     {
         Minimap _minimap;
 
         [field: SerializeField]
-        public float MinSize = 5f;
+        public float Factor { get; set; } = 1;
 
         [field: SerializeField]
-        public float MaxSize = 30f;
+        public float MinSize { get; set; } = 5f;
+
+        [field: SerializeField]
+        public float MaxSize { get; set; } = 30f;
 
         private void Awake()
         {
@@ -22,7 +25,7 @@ namespace UnityTests
         void IScrollHandler.OnScroll(PointerEventData eventData)
         {
             // 地图缩放
-            var newSize = Mathf.Clamp(_minimap.AreaSize + eventData.scrollDelta.y, MinSize, MaxSize);
+            var newSize = Mathf.Clamp(_minimap.AreaSize + eventData.scrollDelta.y * Factor, MinSize, MaxSize);
             _minimap.AreaSize = newSize;
         }
     }

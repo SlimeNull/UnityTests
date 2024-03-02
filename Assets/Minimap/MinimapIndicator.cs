@@ -14,7 +14,7 @@ namespace UnityTests
         public Transform IconsSlot { get; set; }
 
         [field: SerializeField]
-        public IndicatorItem[] Items { get; set; }
+        public List<IndicatorItem> Items { get; set; }
 
         private void Awake()
         {
@@ -68,7 +68,15 @@ namespace UnityTests
 
                     icon.SetActive(true);
                     icon.transform.localPosition = localPosition;
-                    icon.transform.localEulerAngles = new Vector3(0, 0, -(item.GameObject.transform.eulerAngles.y));
+
+                    if (item.ApplyRotation)
+                    {
+                        var rotationY = item.GameObject.transform.eulerAngles.y;
+                        if (_minimap.Origin != null)
+                            rotationY -= _minimap.Origin.transform.eulerAngles.y;
+
+                        icon.transform.localEulerAngles = new Vector3(0, 0, -rotationY);
+                    }
                 }
                 else
                 {
@@ -85,13 +93,11 @@ namespace UnityTests
         {
             public GameObject GameObject;
             public GameObject IconPrefab;
+            public bool ApplyRotation;
 
             public override bool Equals(object obj) => obj is IndicatorItem item && Equals(item);
-            public bool Equals(IndicatorItem other) => EqualityComparer<GameObject>.Default.Equals(GameObject, other.GameObject) && EqualityComparer<GameObject>.Default.Equals(IconPrefab, other.IconPrefab);
-            public override int GetHashCode() => HashCode.Combine(GameObject, IconPrefab);
-
-            public static bool operator ==(IndicatorItem left, IndicatorItem right) => left.Equals(right);
-            public static bool operator !=(IndicatorItem left, IndicatorItem right) => !(left == right);
+            public bool Equals(IndicatorItem other) => EqualityComparer<GameObject>.Default.Equals(GameObject, other.GameObject) && EqualityComparer<GameObject>.Default.Equals(IconPrefab, other.IconPrefab) && ApplyRotation == other.ApplyRotation;
+            public override int GetHashCode() => HashCode.Combine(GameObject, IconPrefab, ApplyRotation);
         }
     }
 }

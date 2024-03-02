@@ -31,12 +31,42 @@ namespace UnityTests
         /// <summary>
         /// 小地图相对地图纹理的缩放系数
         /// </summary>
-        public float Scale => (TextureSource?.AreaSize ?? 50) / AreaSize;
+        public float Scale
+        {
+            get
+            {
+                if (TextureSource == null)
+                    return 50 / AreaSize;
+
+                return TextureSource.AreaSize / AreaSize;
+            }
+        }
+
+        /// <summary>
+        /// 小地图旋转
+        /// </summary>
+        public float Rotation
+        {
+            get
+            {
+                if (Origin == null)
+                    return 0;
+
+                float rotation = -Origin.transform.eulerAngles.y * Mathf.Deg2Rad;
+                return rotation;
+            }
+        }
 
         public void ViewportToWorldPoint(Vector2 point, out float x, out float z)
         {
             var localPoint = new Vector2(point.x * 2 - 1, point.y * 2 - 1);
-            var relativePoint = localPoint / 2 / Scale * TextureSource.AreaSize;
+            var localPointLength = localPoint.magnitude;
+
+            var angle = Mathf.Atan2(localPoint.y, localPoint.x);
+            var rotatedAngle = angle + Rotation;
+
+            var rotatedLocalPoint = new Vector2(Mathf.Cos(rotatedAngle) * localPointLength, Mathf.Sin(rotatedAngle) * localPointLength);
+            var relativePoint = rotatedLocalPoint / 2 / Scale * TextureSource.AreaSize;
 
             var centerPoint = new Vector3(0, 0, 0);
             if (Origin != null)
@@ -56,7 +86,13 @@ namespace UnityTests
                 centerPoint = Origin.transform.position;
 
             var relativePoint = new Vector2(x - centerPoint.x, z - centerPoint.z);
-            var localPoint = relativePoint / TextureSource.AreaSize * Scale * 2;
+            var rotatedLocalPoint = relativePoint / TextureSource.AreaSize * Scale * 2;
+            var localPointLength = rotatedLocalPoint.magnitude;
+
+            var rotatedAngle = Mathf.Atan2(rotatedLocalPoint.y, rotatedLocalPoint.x);
+            var angle = rotatedAngle - Rotation;
+
+            var localPoint = new Vector2(Mathf.Cos(angle) * localPointLength, Mathf.Sin(angle) * localPointLength);
             var viewportPoint = new Vector2((localPoint.x + 1) / 2, (localPoint.y + 1) / 2);
 
             return viewportPoint;

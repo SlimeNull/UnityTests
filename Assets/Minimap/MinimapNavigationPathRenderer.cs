@@ -11,7 +11,7 @@ namespace UnityTests
     /// 小地图导航路线显示器
     /// </summary>
     [RequireComponent(typeof(CanvasRenderer))]
-    public class MinimapNavigationIndicator : MaskableGraphic
+    public class MinimapNavigationPathRenderer : MaskableGraphic
     {
         [field: SerializeField]
         public Minimap Minimap { get; set; }
@@ -24,7 +24,7 @@ namespace UnityTests
 
         private void Update()
         {
-            SetAllDirty();
+            SetVerticesDirty();
         }
 
         protected override void OnPopulateMesh(VertexHelper vh)
