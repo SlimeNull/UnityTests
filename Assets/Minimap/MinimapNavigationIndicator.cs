@@ -14,13 +14,10 @@ namespace UnityTests
     public class MinimapNavigationIndicator : MaskableGraphic
     {
         [field: SerializeField]
-        public Camera MinimapCamera { get; set; }
+        public Minimap Minimap { get; set; }
 
         [field: SerializeField]
         public NavMeshAgent NavMeshAgent { get; set; }
-
-        [field: SerializeField]
-        public float Size { get; set; } = 100;
 
         [field: SerializeField]
         public float LineThickness { get; set; } = 3;
@@ -32,13 +29,15 @@ namespace UnityTests
 
         protected override void OnPopulateMesh(VertexHelper vh)
         {
-            var radius = Size / 2;
-            var halfLineThickness = LineThickness / 2;
-
             vh.Clear();
 
-            if (MinimapCamera == null ||
-                NavMeshAgent == null)
+            if (Minimap == null)
+                return;
+
+            var radius = Minimap.Size / 2;
+            var halfLineThickness = LineThickness / 2;
+
+            if (NavMeshAgent == null)
                 return;
 
             if (!NavMeshAgent.hasPath)
@@ -50,8 +49,8 @@ namespace UnityTests
             Vector2[] circlePoints = new Vector2[worldPoints.Length];
             for (int i = 0; i < circlePoints.Length; i++)
             {
-                var worldPoint = MinimapCamera.WorldToViewportPoint(worldPoints[i]);
-                circlePoints[i] = new Vector2(worldPoint.x * 2 - 1, worldPoint.y * 2 - 1);
+                var viewportPoint = Minimap.WorldToViewportPoint(worldPoints[i].x, worldPoints[i].z);
+                circlePoints[i] = new Vector2(viewportPoint.x * 2 - 1, viewportPoint.y * 2 - 1);
             }
 
             var pointOffset = new Vector2();
