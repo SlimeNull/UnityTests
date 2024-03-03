@@ -20,6 +20,7 @@ namespace UnityTests
         float _radianVelocityDrag = 10;
 
         bool _dragging;
+        CarouselItem _lastSelectedItem;
 
 
         [SerializeField]
@@ -28,7 +29,7 @@ namespace UnityTests
         [SerializeField]
         private bool _scaleImages = true;
 
-        List<UnityEngine.UI.Image> _imageComponents = new();
+        List<UnityEngine.UI.Image> _imageComponents;
 
         protected RectTransform rectTransform => _rectTransform ??= GetComponent<RectTransform>();
 
@@ -80,6 +81,7 @@ namespace UnityTests
         protected override void Start()
         {
             UpdateImagesStatus();
+            Select(0);
         }
 
         protected virtual void Update()
@@ -152,34 +154,28 @@ namespace UnityTests
         private void UpdateRenderers()
         {
             if (_imageComponents is null)
+                _imageComponents = new List<UnityEngine.UI.Image>(GetComponentsInChildren<UnityEngine.UI.Image>());
+
+            if (_imageComponents.Count < _images.Length)
             {
-                _imageComponents = _images
-                    .Select(image => CreateRendererFor(image))
-                    .ToList();
+                for (int i = 0; i < _imageComponents.Count; i++)
+                    _imageComponents[i].sprite = _images[i];
+                while (_imageComponents.Count < _images.Length)
+                    _imageComponents.Add(CreateRendererFor(_images[_imageComponents.Count]));
             }
             else
             {
-                if (_imageComponents.Count < _images.Length)
+                for (int i = 0; i < _images.Length; i++)
+                    _imageComponents[i].sprite = _images[i];
+                while (_imageComponents.Count > _images.Length)
                 {
-                    for (int i = 0; i < _imageComponents.Count; i++)
-                        _imageComponents[i].sprite = _images[i];
-                    while (_imageComponents.Count < _images.Length)
-                        _imageComponents.Add(CreateRendererFor(_images[_imageComponents.Count]));
-                }
-                else
-                {
-                    for (int i = 0; i < _images.Length; i++)
-                        _imageComponents[i].sprite = _images[i];
-                    while (_imageComponents.Count > _images.Length)
-                    {
-                        int lastIndex = _imageComponents.Count - 1;
+                    int lastIndex = _imageComponents.Count - 1;
 
-                        // destroy the last
-                        Destroy(_imageComponents[lastIndex].gameObject);
+                    // destroy the last
+                    Destroy(_imageComponents[lastIndex].gameObject);
 
-                        // remove the last
-                        _imageComponents.RemoveAt(lastIndex);
-                    }
+                    // remove the last
+                    _imageComponents.RemoveAt(lastIndex);
                 }
             }
         }
@@ -299,7 +295,20 @@ namespace UnityTests
                     _radianOffset = newValue;
                     UpdateImagesStatus();
                 }, endValue, .1f)
-                .SetEase(Ease.OutCirc);
+                .SetEase(Ease.OutCirc)
+                .OnComplete(() =>
+                {
+                    var selectedGameObject = _imageComponents[index].gameObject;
+
+                    _lastSelectedItem?.OnItemDeselected();
+                    _lastSelectedItem = null;
+
+                    if (selectedGameObject.GetComponent<CarouselItem>() is CarouselItem carouselItem)
+                    {
+                        carouselItem.OnItemSelected();
+                        _lastSelectedItem = carouselItem;
+                    }
+                });
         }
 
         /// <summary>

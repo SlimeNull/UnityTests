@@ -9,5 +9,10 @@ namespace UnityTests
         {
             print($"{gameObject} was selected");
         }
+
+        public virtual void OnItemDeselected()
+        {
+
+        }
     }
 }

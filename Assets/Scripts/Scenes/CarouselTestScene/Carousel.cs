@@ -17,6 +17,8 @@ namespace UnityTests
 
         bool _dragging;
 
+        CarouselItem _lastSelectedItem;
+
         [field: SerializeField]
         public float Size { get; set; } = 5;
 
@@ -145,9 +147,13 @@ namespace UnityTests
                 }, originRadian, targetRadian, CorrectTime)
                 .OnComplete(() =>
                 {
+                    _lastSelectedItem?.OnItemDeselected();
+                    _lastSelectedItem = null;
+
                     if (SelectedGameObject.GetComponent<CarouselItem>() is CarouselItem carouselItem)
                     {
                         carouselItem.OnItemSelected();
+                        _lastSelectedItem = carouselItem;
                     }
                 });
         }
