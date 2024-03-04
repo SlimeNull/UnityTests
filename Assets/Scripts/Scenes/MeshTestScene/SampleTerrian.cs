@@ -22,6 +22,11 @@ namespace UnityTests
         [field: SerializeField]
         public float HeightScale { get; set; } = 1;
 
+        protected virtual void OnPopulateVertex(Vector3 vertex)
+        {
+
+        }
+
         protected abstract int GetXStart();
         protected abstract int GetXEnd();
         protected abstract int GetZStart();
@@ -64,7 +69,9 @@ namespace UnityTests
 
                     // 顶点以及 UV
                     vertices[xOffset * z + x] = vertex;
-                    uvs[xOffset * z + x] = new Vector2(x / (xOffset - 1), z / (xOffset - 1));
+                    uvs[xOffset * z + x] = new Vector2((float)x / (xOffset - 1), (float)z / (xOffset - 1));
+
+                    OnPopulateVertex(vertex);
                 }
             }
 
