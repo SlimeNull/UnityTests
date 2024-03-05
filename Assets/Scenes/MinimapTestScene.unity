@@ -1321,7 +1321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535752728}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12218327, y: 0.000000017077465, z: -0.0000000021023319, w: 0.9925076}
+  m_LocalRotation: {x: 0.12218325, y: -0.000000017077465, z: 0.0000000021023316, w: 0.9925076}
   m_LocalPosition: {x: 0, y: 8.05, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2065,7 +2065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &925034116
 Transform:
   m_ObjectHideFlags: 0
@@ -2382,7 +2382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139296851}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12218327, y: 0.000000017077465, z: -0.0000000021023319, w: 0.9925076}
+  m_LocalRotation: {x: 0.12218325, y: -0.000000017077465, z: 0.0000000021023316, w: 0.9925076}
   m_LocalPosition: {x: 0, y: 8.05, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2585,15 +2585,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Offset>k__BackingField: {x: 0, y: -2, z: 0}
   <SizeScale>k__BackingField: 1
-  <HeightScale>k__BackingField: 3
-  <Size>k__BackingField: 100
-  <Octaves>k__BackingField: 0
+  <HeightScale>k__BackingField: 1
+  <Size>k__BackingField: 32
+  <Octaves>k__BackingField: 3
   <PerlinOffset>k__BackingField: {x: 0, y: 0}
   <PerlinScale>k__BackingField: {x: 3.5, y: 3.5}
   <GrassMesh>k__BackingField: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
   <GrassRotation>k__BackingField: {x: 0, y: 0, z: 0}
   <GrassScale>k__BackingField: {x: 0.1, y: 0.5, z: 0.1}
   <GrassMaterial>k__BackingField: {fileID: 2100000, guid: 34fce2f3d0451f94f85adde02313849f, type: 2}
+  <BatchSize>k__BackingField: 1023
 --- !u!1 &1430647012
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,10 +2,6 @@
 
 namespace UnityTests
 {
-    public class PerlinNoise
-    {
-
-    }
 
     /// <summary>
     /// 柏林噪声地形
@@ -34,13 +30,15 @@ namespace UnityTests
             float value = Mathf.PerlinNoise((PerlinOffset.x + (float)x * PerlinScale.x) / Size, (PerlinOffset.x + (float)z * PerlinScale.y) / Size);
             float total = 1;
 
+            float nowPerlinMul = 1;
             float nowPerlinSize = 1;
 
             // 如果启用倍频, 则进行叠加
             for (int i = 0; i < Octaves; i++)
             {
+                nowPerlinMul *= 2;
                 nowPerlinSize /= 2;
-                value += Mathf.PerlinNoise((PerlinOffset.x + (float)x * PerlinScale.x) / Size, (PerlinOffset.x + (float)z * PerlinScale.y) / Size) / nowPerlinSize;
+                value += Mathf.PerlinNoise((PerlinOffset.x + (float)x * nowPerlinMul * PerlinScale.x) / Size, (PerlinOffset.x * nowPerlinMul + (float)z * PerlinScale.y) / Size) / nowPerlinSize;
                 total += nowPerlinSize;
             }
 

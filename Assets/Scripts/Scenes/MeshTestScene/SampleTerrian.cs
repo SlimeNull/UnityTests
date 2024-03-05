@@ -22,6 +22,10 @@ namespace UnityTests
         [field: SerializeField]
         public float HeightScale { get; set; } = 1;
 
+        /// <summary>
+        /// 当生成顶点的时候调用
+        /// </summary>
+        /// <param name="vertex"></param>
         protected virtual void OnPopulateVertex(Vector3 vertex)
         {
 
