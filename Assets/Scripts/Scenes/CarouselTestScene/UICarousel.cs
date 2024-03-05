@@ -388,7 +388,7 @@ namespace UnityTests
             {
                 var renderer = _imageComponents[i];
 
-                if (eventData.pointerCurrentRaycast.gameObject == renderer.gameObject)
+                if (eventData.pointerPressRaycast.gameObject == renderer.gameObject)
                 {
                     Select(i);
                     break;

@@ -246,7 +246,7 @@ namespace UnityTests
             {
                 var renderer = transform.GetChild(i);
 
-                if (eventData.pointerCurrentRaycast.gameObject == renderer.gameObject)
+                if (eventData.pointerPressRaycast.gameObject == renderer.gameObject)
                 {
                     Select(i);
                     break;
