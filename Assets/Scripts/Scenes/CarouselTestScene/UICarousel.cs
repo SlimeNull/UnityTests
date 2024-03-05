@@ -17,7 +17,6 @@ namespace UnityTests
         // 旋转偏移量 (弧度制)
         float _radianOffset;
         float _radianVelocity;
-        float _radianVelocityDrag = 10;
 
         bool _dragging;
         CarouselItem _lastSelectedItem;
@@ -29,16 +28,35 @@ namespace UnityTests
         [SerializeField]
         private bool _scaleImages = true;
 
+        [SerializeField]
+        private float _minScale = 0.3f;
+
         List<UnityEngine.UI.Image> _imageComponents;
 
         protected RectTransform rectTransform => _rectTransform ??= GetComponent<RectTransform>();
 
-        // 图片集合
+        /// <summary>
+        /// 要展示的图片
+        /// </summary>
         public Sprite[] Images { get => _images; set => SetImages(value); }
 
-        // 图片尺寸 (用于生成 Image 物体设置大小)
+        /// <summary>
+        /// 图片尺寸 (用于生成 Image 物体设置大小)
+        /// </summary>
         [field: SerializeField]
-        public Vector3 ImageSize { get; set; } = new Vector3(100, 100);
+        public Vector2 ImageSize { get; set; } = new Vector2(100, 100);
+
+        /// <summary>
+        /// 旋转阻力
+        /// </summary>
+        [field: SerializeField]
+        public float RadianDrag { get; set; } = 10;
+
+        /// <summary>
+        /// 矫正时间
+        /// </summary>
+        [field: SerializeField]
+        public float CorrectionDuration { get; set; } = 0.2f;
 
         /// <summary>
         ///是否根据图像的前后关系调整图像大小  <br/>
@@ -53,14 +71,17 @@ namespace UnityTests
                 UpdateImagesStatus();
             }
         }
-        [field: SerializeField]
-        public bool AllowClickSelection { get; set; } = false;
 
         /// <summary>
         /// 最小缩放比例 (最后方的图像的缩放系数会是这个值)
         /// </summary>
+        public float MinScale { get => _minScale; set => _minScale = value; }
+
+        /// <summary>
+        /// 允许点击选择
+        /// </summary>
         [field: SerializeField]
-        public float MinScale { get; set; } = 0.3f;
+        public bool AllowClickSelection { get; set; } = false;
 
         /// <summary>
         /// 已选择的索引
@@ -95,7 +116,7 @@ namespace UnityTests
                 var radianVelocitySign = Mathf.Sign(_radianVelocity);
                 var radianVelocitySize = Mathf.Abs(_radianVelocity);
 
-                radianVelocitySize -= _radianVelocityDrag * Time.deltaTime;
+                radianVelocitySize -= RadianDrag * Time.deltaTime;
                 if (radianVelocitySize < 0)
                     radianVelocitySize = 0;
 
@@ -323,6 +344,7 @@ namespace UnityTests
 
             _radianOffset += radianChange;
             _radianVelocity = radianChange / Time.deltaTime;
+
             UpdateImagesStatus();
         }
 

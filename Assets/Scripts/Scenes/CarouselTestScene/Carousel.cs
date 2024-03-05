@@ -6,11 +6,10 @@ using UnityEngine.EventSystems;
 
 namespace UnityTests
 {
-    public class Carousel : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+    public class Carousel : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
     {
-        float _radianOffset;
-        float _radianVelocity;
-        float _radianVelocityDrag = 10;
+        float _radianOffset;                     // 弧度偏移量
+        float _radianVelocity;                   // 旋转速度
 
         float _cameraDistance;
         Vector3 _lastMouseWorldPosition;
@@ -19,13 +18,38 @@ namespace UnityTests
 
         CarouselItem _lastSelectedItem;
 
+        /// <summary>
+        /// 大小
+        /// </summary>
         [field: SerializeField]
         public float Size { get; set; } = 5;
 
+        /// <summary>
+        /// 旋转阻力
+        /// </summary>
         [field: SerializeField]
-        public float CorrectTime { get; set; } = 0.2f;
+        public float RadianDrag { get; set; } = 10;
 
+        /// <summary>
+        /// 矫正时长
+        /// </summary>
+        [field: SerializeField]
+        public float CorrectionDuration { get; set; } = 0.2f;
+
+        /// <summary>
+        /// 允许点击选择
+        /// </summary>
+        [field: SerializeField]
+        public bool AllowClickSelection { get; set; } = false;
+
+        /// <summary>
+        /// 已选择的索引
+        /// </summary>
         public int SelectedIndex { get; private set; }
+
+        /// <summary>
+        /// 已选择的图像
+        /// </summary>
         public GameObject SelectedGameObject { get; private set; }
 
         // Start is called before the first frame update
@@ -50,7 +74,7 @@ namespace UnityTests
                 var radianVelocitySign = Mathf.Sign(_radianVelocity);
                 var radianVelocitySize = Mathf.Abs(_radianVelocity);
 
-                radianVelocitySize -= _radianVelocityDrag * Time.deltaTime;
+                radianVelocitySize -= RadianDrag * Time.deltaTime;
                 if (radianVelocitySize < 0)
                     radianVelocitySize = 0;
 
@@ -144,7 +168,7 @@ namespace UnityTests
                 {
                     _radianOffset = radian;
                     UpdateObjectStatus();
-                }, originRadian, targetRadian, CorrectTime)
+                }, originRadian, targetRadian, CorrectionDuration)
                 .OnComplete(() =>
                 {
                     _lastSelectedItem?.OnItemDeselected();
@@ -172,10 +196,8 @@ namespace UnityTests
             var radianChange = mouseWorldOffset.x / radius;
 
             _radianVelocity = radianChange / Time.deltaTime;
-
-            print($"mouse offset: {mouseWorldOffset.x}");
-
             _radianOffset += radianChange;
+
             UpdateObjectStatus();
         }
 
@@ -194,6 +216,25 @@ namespace UnityTests
         void IEndDragHandler.OnEndDrag(PointerEventData eventData)
         {
             _dragging = false;
+        }
+
+        void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+        {
+            if (!AllowClickSelection)
+                return;
+
+            var childCount = transform.childCount;
+
+            for (int i = 0; i < childCount; i++)
+            {
+                var renderer = transform.GetChild(i);
+
+                if (eventData.pointerCurrentRaycast.gameObject == renderer.gameObject)
+                {
+                    Select(i);
+                    break;
+                }
+            }
         }
     }
 }
