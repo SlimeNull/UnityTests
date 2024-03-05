@@ -52,7 +52,7 @@ namespace UnityTests
         /// 矫正时长
         /// </summary>
         [field: SerializeField]
-        public float AutoCorrectionDuration { get; set; } = 0.2f;
+        public float TransitionTime { get; set; } = 0.2f;
 
         /// <summary>
         /// 已选择的索引
@@ -180,7 +180,7 @@ namespace UnityTests
                 {
                     _radianOffset = radian;
                     UpdateObjectStatus();
-                }, originRadian, targetRadian, AutoCorrectionDuration)
+                }, originRadian, targetRadian, TransitionTime)
                 .OnComplete(() =>
                 {
                     _lastSelectedItem?.OnItemDeselected();

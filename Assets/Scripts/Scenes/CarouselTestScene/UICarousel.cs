@@ -87,7 +87,7 @@ namespace UnityTests
         /// 矫正时间
         /// </summary>
         [field: SerializeField]
-        public float CorrectionDuration { get; set; } = 0.2f;
+        public float TransitionTime { get; set; } = 0.2f;
 
         /// <summary>
         /// 已选择的索引
