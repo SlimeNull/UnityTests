@@ -31,16 +31,28 @@ namespace UnityTests
         public float RadianDrag { get; set; } = 10;
 
         /// <summary>
-        /// 矫正时长
-        /// </summary>
-        [field: SerializeField]
-        public float CorrectionDuration { get; set; } = 0.2f;
-
-        /// <summary>
         /// 允许点击选择
         /// </summary>
         [field: SerializeField]
         public bool AllowClickSelection { get; set; } = false;
+
+        /// <summary>
+        /// 启用惯性
+        /// </summary>
+        [field: SerializeField]
+        public bool EnableInertia { get; set; } = true;
+
+        /// <summary>
+        /// 启用自动回正
+        /// </summary>
+        [field: SerializeField]
+        public bool EnableAutoCorrection { get; set; } = true;
+
+        /// <summary>
+        /// 矫正时长
+        /// </summary>
+        [field: SerializeField]
+        public float AutoCorrectionDuration { get; set; } = 0.2f;
 
         /// <summary>
         /// 已选择的索引
@@ -66,7 +78,7 @@ namespace UnityTests
         protected virtual void Update()
         {
             // 拖拽惯性
-            if (!_dragging && _radianVelocity != 0)
+            if (EnableInertia && !_dragging && _radianVelocity != 0)
             {
                 _radianOffset += _radianVelocity * Time.deltaTime;
                 UpdateObjectStatus();
@@ -80,7 +92,7 @@ namespace UnityTests
 
                 _radianVelocity = radianVelocitySign * radianVelocitySize;
 
-                if (_radianVelocity == 0)
+                if (EnableAutoCorrection && _radianVelocity == 0)
                 {
                     Select(SelectedIndex);
                 }
@@ -168,7 +180,7 @@ namespace UnityTests
                 {
                     _radianOffset = radian;
                     UpdateObjectStatus();
-                }, originRadian, targetRadian, CorrectionDuration)
+                }, originRadian, targetRadian, AutoCorrectionDuration)
                 .OnComplete(() =>
                 {
                     _lastSelectedItem?.OnItemDeselected();
@@ -216,6 +228,11 @@ namespace UnityTests
         void IEndDragHandler.OnEndDrag(PointerEventData eventData)
         {
             _dragging = false;
+
+            if (EnableAutoCorrection && !EnableInertia)
+            {
+                Select(SelectedIndex);
+            }
         }
 
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
